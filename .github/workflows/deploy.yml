@@ -1,9 +1,8 @@
 name: Update submodule
 
 on:
-  push:
-    branches:
-      - master
+  repository_dispatch:
+    types: [my-event]
 
 jobs:
 
