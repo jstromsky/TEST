@@ -19,4 +19,12 @@ jobs:
         uses: textbook/git-checkout-submodule-action@master
         with:
           remote: true
+      - name: Commit changes
+          uses: EndBug/add-and-commit@v5
+          with:
+            author_name: autocommit
+            author_email: mail@example.com
+            message: "Autocommit for submodule update"
+          env:
+            GITHUB_TOKEN: ${{ secrets.TEST_PAT }}
 
