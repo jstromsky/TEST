@@ -1,0 +1,19 @@
+name: Update submodule
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+
+  update-submodule-job:
+    name: update submodule
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Checkout submodules
+        uses: textbook/git-checkout-submodule-action@master
+        with:
+          remote: true
+          
