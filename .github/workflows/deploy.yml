@@ -14,15 +14,8 @@ jobs:
         with:
           token: ${{ secrets.TEST_PAT }}
           submodules: true
-      - name: Checkout submodules
-        uses: textbook/git-checkout-submodule-action@master
-        with:
-          remote: true
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v5
-        with:
-          author_name: autocommit
-          author_email: mail@example.com
-          message: "Autocommit for submodule update"
-        env:
-          GITHUB_TOKEN: ${{ secrets.TEST_PAT }}
+      - run: |
+        git config user.name Submodule Update Workflow
+        git add .
+        git commit -m "Commit from GitHub Actions Submodule Update Workflow"
+        git push
