@@ -16,6 +16,5 @@ jobs:
           submodules: true
       - run: |
         git config user.name "Submodule Update Workflow"
-        git add .
         git commit -m "Commit from GitHub Actions Submodule Update Workflow"
         git push
